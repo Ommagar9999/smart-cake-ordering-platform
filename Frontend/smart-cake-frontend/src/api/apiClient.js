@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:8080";
+const API_BASE_URL = "https://smart-cake-ordering-platform-6.onrender.com";
 
 const apiRequest = async (endpoint, options = {}) => {
   const token = localStorage.getItem("token");
