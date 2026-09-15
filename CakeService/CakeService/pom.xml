@@ -6,7 +6,9 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
+	<!-- ============================== -->
 	<!-- Spring Boot -->
+	<!-- ============================== -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -14,7 +16,9 @@
 		<relativePath/>
 	</parent>
 
+	<!-- ============================== -->
 	<!-- Project Information -->
+	<!-- ============================== -->
 	<groupId>com.omizoon</groupId>
 	<artifactId>cake-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -22,13 +26,17 @@
 	<name>cake-service</name>
 	<description>Smart Cake Ordering - Cake Service</description>
 
+	<!-- ============================== -->
 	<!-- Properties -->
+	<!-- ============================== -->
 	<properties>
 		<java.version>21</java.version>
 		<spring-cloud.version>2025.1.2</spring-cloud.version>
 	</properties>
 
+	<!-- ============================== -->
 	<!-- Dependencies -->
+	<!-- ============================== -->
 	<dependencies>
 
 		<!-- REST API -->
@@ -66,6 +74,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+			<version>1.18.42</version>
 			<optional>true</optional>
 		</dependency>
 
@@ -77,13 +86,14 @@
 			<optional>true</optional>
 		</dependency>
 
-
+		<!-- JWT API -->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-api</artifactId>
 			<version>0.12.6</version>
 		</dependency>
 
+		<!-- JWT Implementation -->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-impl</artifactId>
@@ -91,6 +101,7 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!-- JWT Jackson -->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-jackson</artifactId>
@@ -98,6 +109,7 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!-- Spring Security -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
@@ -112,7 +124,9 @@
 
 	</dependencies>
 
-	<!-- Spring Cloud Dependency Management -->
+	<!-- ============================== -->
+	<!-- Spring Cloud Dependency -->
+	<!-- ============================== -->
 	<dependencyManagement>
 		<dependencies>
 
@@ -127,9 +141,28 @@
 		</dependencies>
 	</dependencyManagement>
 
+	<!-- ============================== -->
 	<!-- Build -->
+	<!-- ============================== -->
 	<build>
 		<plugins>
+
+			<!-- Lombok Annotation Processing -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.15.0</version>
+
+				<configuration>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+							<version>1.18.42</version>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
+			</plugin>
 
 			<!-- Spring Boot Maven Plugin -->
 			<plugin>
